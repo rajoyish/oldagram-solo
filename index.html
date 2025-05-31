@@ -4,10 +4,78 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Oldagram</title>
   </head>
   <body>
-    <h1>oldagram</h1>
+    <header class="oldagram-header">
+      <img
+        src="https://i.postimg.cc/G3vbvVfb/logo.png"
+        alt="Logo Oldagram"
+        class="oldagram-header__logo"
+      />
+      <img
+        src="https://i.postimg.cc/htZnSBX1/user-avatar.png"
+        alt="Profile of Per Borgen"
+        class="oldagram-header__profile"
+      />
+    </header>
+    <main class="posts">
+      <section class="posts__item">
+        <div class="post">
+          <div class="post__user-profile">
+            <img
+              src="https://i.postimg.cc/8cdDDfv7/avatar-vangogh.jpg"
+              alt="Profile photo of User"
+              class="post__avatar"
+            />
+            <div class="post__user-info">
+              <h2 class="post__name">Vincent van Gogh</h2>
+              <h3 class="post__location">Zudert, Netherlands</h3>
+            </div>
+          </div>
+
+          <div class="post__image-wrapper">
+            <img
+              src="https://i.postimg.cc/XYY3SJYv/post-vangogh.jpg"
+              alt="Self-portrait of User"
+              class="post__image"
+            />
+          </div>
+
+          <div class="post__actions">
+            <img
+              src="https://i.postimg.cc/Rhx9jLWr/icon-heart.png"
+              alt="Icon of likes"
+              class="post__icon post__icon--like"
+            />
+            <img
+              src="https://i.postimg.cc/FK19cKM6/icon-comment.png"
+              alt="Icon of comment"
+              class="post__icon post__icon--comment"
+            />
+            <img
+              src="https://i.postimg.cc/ZRd47MKF/icon-dm.png"
+              alt="Icon of Direct Message"
+              class="post__icon post__icon--dm"
+            />
+          </div>
+
+          <h4 class="post__likes-count">21,492 likes</h4>
+
+          <div class="post__body">
+            <h4 class="post__username">vincey1853</h4>
+            <p class="post__text">just took a few mushrooms lol</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

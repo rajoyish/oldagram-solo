@@ -1,3 +1,94 @@
 body {
-  background-color: antiquewhite;
+  background-color: #ededed;
+  font-family: 'Source Sans 3', sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px;
+}
+
+/* Typography */
+.post__name,
+.post__likes-count,
+.post__body {
+  font-size: 0.81rem;
+}
+
+.post__location {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.oldagram-header__logo {
+  max-width: 7.94rem;
+}
+
+.post__avatar,
+.oldagram-header__profile {
+  max-width: 2.13rem;
+}
+
+.oldagram-header__profile,
+.post__avatar {
+  border-radius: 50%;
+}
+
+/* Layout */
+.oldagram-header,
+.posts__item {
+  background-color: #fff;
+}
+.oldagram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.94rem;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.post__user-profile {
+  display: flex;
+  gap: 0.44em;
+  padding: 0.63em;
+}
+
+.post__image {
+  max-width: 100%;
+  margin-bottom: 1.31em;
+}
+
+.post__actions {
+  display: flex;
+  gap: 1.25em;
+  margin-bottom: 0.75em;
+}
+
+.post__icon {
+  width: 1.46rem;
+}
+
+.post__actions,
+.post__likes-count,
+.post__body {
+  padding: 0 0.63em;
+}
+
+.post__likes-count {
+  margin-bottom: 0.75em;
+}
+
+.post__body {
+  display: flex;
+  gap: 0.5em;
+}
+
+.posts__item {
+  border: 2px solid red;
+  margin-bottom: 1.56em;
+}
+
+@media (min-width: 768px) {
+  .posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23.44rem, 1fr));
+    gap: 1.56em;
+  }
 }
