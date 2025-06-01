@@ -24,6 +24,7 @@ body {
 .post__avatar,
 .oldagram-header__profile {
   max-width: 2.13rem;
+  max-height: 2.13rem;
 }
 
 .oldagram-header__profile,
@@ -78,17 +79,17 @@ body {
 .post__body {
   display: flex;
   gap: 0.5em;
+  padding-bottom: 0.63em;
 }
 
 .posts__item {
-  border: 2px solid red;
   margin-bottom: 1.56em;
 }
 
 @media (min-width: 768px) {
-  .posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(23.44rem, 1fr));
-    gap: 1.56em;
+  header,
+  main {
+    max-width: 450px;
+    margin: 0 auto;
   }
 }
