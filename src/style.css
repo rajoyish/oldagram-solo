@@ -5,6 +5,18 @@ body {
   font-size: 16px;
 }
 
+/* Accessibility Hack */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+
 /* Typography */
 .post__name,
 .post__likes-count,
@@ -25,6 +37,10 @@ body {
 .oldagram-header__profile {
   max-width: 2.13rem;
   max-height: 2.13rem;
+}
+
+.post__username {
+  font-weight: 700;
 }
 
 .oldagram-header__profile,
@@ -51,6 +67,12 @@ body {
   padding: 0.63em;
 }
 
+.oldagram-header__profile-btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
 .post__image {
   max-width: 100%;
   margin-bottom: 1.31em;
@@ -58,15 +80,18 @@ body {
 
 .post__actions {
   display: flex;
-  gap: 1.25em;
   margin-bottom: 0.75em;
 }
 
 .post__icon {
-  width: 1.46rem;
+  display: inline-block;
+  border: 0;
+  background: transparent;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }
 
-.post__actions,
 .post__likes-count,
 .post__body {
   padding: 0 0.63em;
@@ -87,9 +112,13 @@ body {
 }
 
 @media (min-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
   header,
   main {
     max-width: 450px;
-    margin: 0 auto;
+    margin: auto;
   }
 }

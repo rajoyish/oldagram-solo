@@ -37,11 +37,12 @@ const mainEl = document.querySelector('.posts');
 for (let i = 0; i < posts.length; i++) {
   const post = posts[i];
 
-  const section = document.createElement('section');
-  section.className = 'posts__item';
-  section.innerHTML = `
+  const article = document.createElement('article');
+  article.className = 'posts__item';
+  article.setAttribute('tabindex', '0');
+  article.innerHTML = `
     <div class="post">
-      <div class="post__user-profile">
+      <header class="post__user-profile">
         <img
           src="${post.avatar}"
           alt="Profile photo of ${post.name}"
@@ -49,9 +50,9 @@ for (let i = 0; i < posts.length; i++) {
         />
         <div class="post__user-info">
           <h2 class="post__name">${post.name}</h2>
-          <h3 class="post__location">${post.location}</h3>
+          <div class="post__location">${post.location}</div>
         </div>
-      </div>
+      </header>
       <div class="post__image-wrapper">
         <img
           src="${post.post}"
@@ -59,29 +60,36 @@ for (let i = 0; i < posts.length; i++) {
           class="post__image"
         />
       </div>
-      <div class="post__actions">
-        <img
-          src="https://i.postimg.cc/Rhx9jLWr/icon-heart.png"
-          alt="Like icon"
-          class="post__icon post__icon--like"
-        />
-        <img
-          src="https://i.postimg.cc/FK19cKM6/icon-comment.png"
-          alt="Comment icon"
-          class="post__icon post__icon--comment"
-        />
-        <img
-          src="https://i.postimg.cc/ZRd47MKF/icon-dm.png"
-          alt="Direct message icon"
-          class="post__icon post__icon--dm"
-        />
+      <div class="post__actions" aria-label="Post actions">
+        <button class="post__icon post__icon--like" aria-label="Like post by ${post.name}">
+          <img
+            src="https://i.postimg.cc/Rhx9jLWr/icon-heart.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+        <button class="post__icon post__icon--comment" aria-label="Comment on post by ${post.name}">
+          <img
+            src="https://i.postimg.cc/FK19cKM6/icon-comment.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
+        <button class="post__icon post__icon--dm" aria-label="Send direct message to ${post.name}">
+          <img
+            src="https://i.postimg.cc/ZRd47MKF/icon-dm.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </button>
       </div>
-      <h4 class="post__likes-count">${post.likes} likes</h4>
+      <p class="post__likes-count"><strong>${post.likes}</strong> likes</p>
       <div class="post__body">
-        <h4 class="post__username">${post.username}</h4>
+        <span class="post__username">${post.username}</span>
+        <span class="visually-hidden">says:</span>
         <p class="post__text">${post.comment}</p>
       </div>
     </div>
   `;
-  mainEl.appendChild(section);
+  mainEl.appendChild(article);
 }
